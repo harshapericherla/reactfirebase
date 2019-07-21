@@ -6,6 +6,7 @@ import ProjectDetails from './components/projects/ProjectDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateProject from './components/projects/CreateProject';
+import RouteHOC from './components/auth/RouteHOC';
 
 class App extends Component {
   
@@ -16,11 +17,11 @@ class App extends Component {
         <div className="App">
            <Navbar />
            <Switch>
-              <Route exact path='/' component={Dashboard} />
-              <Route path='/project/:id' component={ProjectDetails} />
+              <RouteHOC exact path='/' component={Dashboard} />
+              <RouteHOC path='/project/:id' component={ProjectDetails} />
               <Route path="/signin" component={SignIn} />
               <Route path="/signup" component={SignUp} />
-              <Route path="/create" component={CreateProject} />
+              <RouteHOC path="/create" component={CreateProject} />
            </Switch>
         </div>
       </BrowserRouter>
